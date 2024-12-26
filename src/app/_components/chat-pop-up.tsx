@@ -25,7 +25,7 @@ export function ChatPopUp() {
 
   const handleSendMessage = () => {
     const encodedMessage = encodeURIComponent(message)
-    const whatsappURL = `https://api.whatsapp.com/send?phone=5518981029767&text=${encodedMessage}`
+    const whatsappURL = `https://api.whatsapp.com/send?phone=5518997968347&text=${encodedMessage}`
 
     window.open(whatsappURL, '_blank')
 
