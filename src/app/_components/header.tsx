@@ -27,16 +27,11 @@ export default function Header(): JSX.Element {
       {({ open }) => (
         <header
           className={Utils.classNames(
-            location === '/'
-              ? 'fixed w-full pt-2'
-              : location.startsWith('/dashboard')
+            location.startsWith('/dashboard')
+              ? 'hidden'
+              : location.startsWith('/login')
                 ? 'hidden'
-                : location.startsWith('/login')
-                  ? 'hidden'
-                  : location.startsWith('/contato') ||
-                      location.startsWith('/formulario')
-                    ? 'absolute top-0 w-full pt-2'
-                    : 'fixed z-50 w-full bg-color-background pt-2',
+                : 'fixed z-50 w-full bg-white pt-2',
           )}
         >
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -73,7 +68,7 @@ export default function Header(): JSX.Element {
                           item.href === location
                             ? 'border-b-4 border-color-primary font-bold'
                             : 'font-medium',
-                          'm-auto flex min-w-24 justify-center gap-2 p-2 text-sm text-color-primary hover:border-b-4 hover:border-color-primary',
+                          'm-auto flex min-w-24 justify-center gap-2 p-2 text-sm text-color-primary transition duration-500 hover:border-b-4 hover:border-color-primary',
                         )}
                         aria-current={
                           item.href === location ? 'page' : undefined
@@ -90,18 +85,13 @@ export default function Header(): JSX.Element {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-                <Link
-                  href={item.href}
-                  key={item.name}
-                  target={item.name === 'AJUDA' ? '_blank' : ''}
-                  rel={item.name === 'AJUDA' ? 'noopener noreferrer' : ''}
-                >
+                <Link href={item.href} key={item.name}>
                   <Disclosure.Button
                     className={Utils.classNames(
                       item.href === location
                         ? 'border-b-4 border-color-primary font-bold'
                         : 'font-medium',
-                      'mb:w-24 m-auto my-1 flex w-full justify-center px-3 py-2 text-color-primary hover:border-color-primary',
+                      'mb:w-24 m-auto my-1 flex w-full justify-center px-3 py-2 text-color-primary transition duration-500 hover:border-color-primary',
                     )}
                     aria-current={item.href === location ? 'page' : undefined}
                   >

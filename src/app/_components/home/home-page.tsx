@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
-import LoadingHomePage from '../loading'
+import LoadingHomePage from '../../loading'
 import {
   COMPANY_DESCRIPTION,
   COMPANY_DESCRIPTION_MORE,
@@ -32,9 +32,9 @@ export default function HomePage() {
     //   className={`flex h-screen w-screen items-center bg-color-background bg-[url('https://bkzzcslgcddqtunfwogg.supabase.co/storage/v1/object/public/images/background.webp')] bg-cover bg-center bg-no-repeat`}
     // >
     <div
-      className={`flex h-screen w-screen items-center bg-color-background bg-cover bg-center bg-no-repeat`}
+      className={`relative flex w-screen items-center bg-color-background bg-cover bg-center bg-no-repeat`}
     >
-      <section className="container flex h-screen items-center md:px-[10%]">
+      <section className="container flex min-h-screen items-center md:px-[10%]">
         <div className="max-w-[600px]">
           <h1 className="text-4xl font-bold leading-loose text-color-primary drop-shadow-md md:text-6xl">
             {COMPANY_NAME}
