@@ -34,16 +34,16 @@ export default function Header(): JSX.Element {
                 : location.startsWith('/login')
                   ? 'hidden'
                   : location.startsWith('/contato') ||
-                    location.startsWith('/formulario')
+                      location.startsWith('/formulario')
                     ? 'absolute top-0 w-full pt-2'
-                    : 'bg-color-background fixed z-50 w-full pt-2',
+                    : 'fixed z-50 w-full bg-color-background pt-2',
           )}
         >
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-20 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="text-color-primary hover:bg-color-secundary hover:text-color-primary relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-color-primary hover:bg-color-secundary hover:text-color-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Abrir Menu</span>
                   {open ? (
@@ -71,9 +71,9 @@ export default function Header(): JSX.Element {
                         href={item.href}
                         className={Utils.classNames(
                           item.href === location
-                            ? 'border-color-primary border-b-4 font-bold'
+                            ? 'border-b-4 border-color-primary font-bold'
                             : 'font-medium',
-                          'text-color-primary hover:border-color-primary m-auto flex min-w-24 justify-center gap-2 p-2 text-sm hover:border-b-4',
+                          'm-auto flex min-w-24 justify-center gap-2 p-2 text-sm text-color-primary hover:border-b-4 hover:border-color-primary',
                         )}
                         aria-current={
                           item.href === location ? 'page' : undefined
@@ -99,9 +99,9 @@ export default function Header(): JSX.Element {
                   <Disclosure.Button
                     className={Utils.classNames(
                       item.href === location
-                        ? 'border-color-primary border-b-4 font-bold'
+                        ? 'border-b-4 border-color-primary font-bold'
                         : 'font-medium',
-                      'mb:w-24 text-color-primary hover:border-color-primary m-auto my-1 flex w-full justify-center px-3 py-2',
+                      'mb:w-24 m-auto my-1 flex w-full justify-center px-3 py-2 text-color-primary hover:border-color-primary',
                     )}
                     aria-current={item.href === location ? 'page' : undefined}
                   >

@@ -24,7 +24,7 @@ export default function Footer() {
 
   return location === '/' || location.startsWith('/login') ? (
     <footer className="absolute bottom-0 z-50 w-full pb-2">
-      <span className="block text-center text-sm text-criarte-secundary">
+      <span className="block text-center text-sm text-color-secundary">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
           {footer.COMPANY_NAME}{' '}
@@ -36,7 +36,7 @@ export default function Footer() {
   ) : location.startsWith('/dashboard') ? (
     <></>
   ) : (
-    <footer className="bg-criarte-background px-4 shadow">
+    <footer className="bg-color-background px-4 shadow">
       <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">
         <div className="flex flex-wrap items-center justify-center sm:justify-between">
           <Link
@@ -47,12 +47,12 @@ export default function Footer() {
               src={logoWhite}
               height={64}
               className="h-16"
-              alt="Colégio Criarte Logo"
+              alt="Colégio color Logo"
             />
           </Link>
 
           {/* Navbar */}
-          <ul className="mb-6 flex flex-wrap items-center gap-6 text-sm font-medium text-criarte-text sm:mb-0">
+          <ul className="mb-6 flex flex-wrap items-center gap-6 text-sm font-medium text-color-text sm:mb-0">
             <li>
               <Link href="/" className="hover:underline">
                 Início
@@ -78,11 +78,11 @@ export default function Footer() {
         {/* Navbar */}
 
         {/* Contato */}
-        <ul className="mb-6 flex flex-wrap items-center gap-4 text-sm font-medium text-criarte-text sm:mb-0 md:justify-end">
+        <ul className="mb-6 flex flex-wrap items-center gap-4 text-sm font-medium text-color-text sm:mb-0 md:justify-end">
           <li>
             <Link
               href="/"
-              className="flex items-center justify-center gap-2 hover:text-criarte-secundary"
+              className="flex items-center justify-center gap-2 hover:text-color-secundary"
             >
               <i className="bx bx-phone text-lg" /> (18) 3222-2682
             </Link>
@@ -90,10 +90,10 @@ export default function Footer() {
           <li>
             <Link
               href="/"
-              className="flex items-center justify-center gap-2 hover:text-criarte-secundary"
+              className="flex items-center justify-center gap-2 hover:text-color-secundary"
             >
               <i className="bx bx-envelope text-lg" />{' '}
-              contato@criarteprofissionalizante.com.br
+              contato@colorprofissionalizante.com.br
             </Link>
           </li>
           <li>
@@ -109,7 +109,7 @@ export default function Footer() {
         {/* Contato */}
 
         {/* Localização */}
-        <ul className="mb-6 mt-6 flex flex-wrap items-center gap-4 text-sm font-medium text-criarte-text sm:mb-0 md:justify-end">
+        <ul className="mb-6 mt-6 flex flex-wrap items-center gap-4 text-sm font-medium text-color-text sm:mb-0 md:justify-end">
           <li>
             <Link
               href="/"
