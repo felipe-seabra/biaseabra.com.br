@@ -32,17 +32,17 @@ export default function HomePage() {
     //   className={`flex h-screen w-screen items-center bg-color-background bg-[url('https://bkzzcslgcddqtunfwogg.supabase.co/storage/v1/object/public/images/background.webp')] bg-cover bg-center bg-no-repeat`}
     // >
     <div
-      className={`bg-color-background flex h-screen w-screen items-center bg-cover bg-center bg-no-repeat`}
+      className={`flex h-screen w-screen items-center bg-color-background bg-cover bg-center bg-no-repeat`}
     >
       <section className="container flex h-screen items-center md:px-[10%]">
         <div className="max-w-[600px]">
-          <h1 className="text-color-primary text-4xl font-bold leading-loose drop-shadow-md md:text-6xl">
+          <h1 className="text-4xl font-bold leading-loose text-color-primary drop-shadow-md md:text-6xl">
             {COMPANY_NAME}
           </h1>
-          <h3 className="text-color-secundary text-3xl font-bold drop-shadow-md md:mt-1 md:text-4xl">
+          <h3 className="text-3xl font-bold text-color-secundary drop-shadow-md md:mt-1 md:text-4xl">
             {COMPANY_TITLE}
           </h3>
-          <p className="text-color-text my-6 text-lg">
+          <p className="my-6 text-lg text-color-text">
             {COMPANY_DESCRIPTION}
             <br />
             {COMPANY_DESCRIPTION_MORE}
@@ -51,7 +51,7 @@ export default function HomePage() {
             <Link href="/cursos">
               <Button
                 type="button"
-                className="border-color-secundary bg-color-secundary hover:text-color-secundary relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500"
+                className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secundary bg-color-secundary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secundary"
               >
                 Saber Mais
               </Button>
@@ -59,7 +59,7 @@ export default function HomePage() {
             <Link href="/contato">
               <Button
                 type="button"
-                className="border-color-secundary text-color-secundary hover:bg-color-secundary group-hover:text-color-text relative inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 bg-transparent text-xl font-semibold leading-6 tracking-wide transition-colors duration-500 hover:text-white group-hover:border-transparent"
+                className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 border-color-secundary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secundary transition-colors duration-500 hover:bg-color-secundary hover:text-white group-hover:border-transparent group-hover:text-color-text"
               >
                 Contato
               </Button>
