@@ -24,7 +24,7 @@ export default function Footer() {
     <></>
   ) : (
     <footer className="absolute bottom-0 z-50 w-full pb-2">
-      <span className="block text-center text-sm text-color-secundary">
+      <span className="text-color-secondary block text-center text-sm">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
           {footer.COMPANY_NAME}{' '}

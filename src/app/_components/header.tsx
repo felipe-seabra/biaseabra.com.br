@@ -38,7 +38,7 @@ export default function Header(): JSX.Element {
             <div className="relative flex h-20 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-color-primary hover:bg-color-secundary hover:text-color-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="hover:bg-color-secondary relative inline-flex items-center justify-center rounded-md p-2 text-color-primary hover:text-color-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Abrir Menu</span>
                   {open ? (
@@ -66,9 +66,9 @@ export default function Header(): JSX.Element {
                         href={item.href}
                         className={Utils.classNames(
                           item.href === location
-                            ? 'border-b-4 border-color-primary font-bold'
+                            ? 'border-color-secondary border-b-4 font-bold'
                             : 'font-medium',
-                          'm-auto flex min-w-24 justify-center gap-2 p-2 text-sm text-color-primary transition duration-500 hover:border-b-4 hover:border-color-primary',
+                          'text-color-secondary hover:border-color-secondary m-auto flex min-w-24 justify-center gap-2 p-2 text-sm transition duration-500 hover:border-b-4',
                         )}
                         aria-current={
                           item.href === location ? 'page' : undefined
@@ -89,9 +89,9 @@ export default function Header(): JSX.Element {
                   <Disclosure.Button
                     className={Utils.classNames(
                       item.href === location
-                        ? 'border-b-4 border-color-primary font-bold'
+                        ? 'border-color-secondary border-b-4 font-bold'
                         : 'font-medium',
-                      'mb:w-24 m-auto my-1 flex w-full justify-center px-3 py-2 text-color-primary transition duration-500 hover:border-color-primary',
+                      'mb:w-24 text-color-secondary hover:border-color-secondary m-auto my-1 flex w-full justify-center px-3 py-2 transition duration-500',
                     )}
                     aria-current={item.href === location ? 'page' : undefined}
                   >
