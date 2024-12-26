@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Utils from '@/lib/utils'
 
-// import { logo } from '@/images'
+import { logoIcon } from '@/images'
 import { Input } from '../../components/ui/input'
 import { Button } from '../../components/ui/button'
-// import { COMPANY_NAME } from '@/database/constants'
+import { COMPANY_NAME } from '@/database/constants'
 
 export function ChatPopUp() {
   const location = usePathname()
@@ -66,13 +66,13 @@ export function ChatPopUp() {
       )}
       {isOpen && (
         <>
-          {/* <div className="mb-10 mr-3 h-10 w-10 rounded-full shadow-md">
+          <div className="mb-10 mr-3 h-10 w-10 rounded-full shadow-md">
             <Image
-              src={logo}
+              src={logoIcon}
               alt={COMPANY_NAME}
-              className="h-auto w-12 rounded-full border-2 border-green-500"
+              className="h-10 w-10 rounded-full border-2 border-green-500 bg-white"
             />
-          </div> */}
+          </div>
           <div className="relative mb-10 max-w-60 rounded-xl bg-green-500 p-5 shadow-md">
             <div className="text-sm text-gray-50">
               <p className="my-2">
