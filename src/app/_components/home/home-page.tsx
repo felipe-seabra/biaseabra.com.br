@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image, { StaticImageData } from 'next/image'
 
 import { Button } from '@/components/ui/button'
-import LoadingHomePage from '../../loading'
+
 import {
   COMPANY_DESCRIPTION,
   COMPANY_DESCRIPTION_MORE,
@@ -13,60 +13,102 @@ import {
   COMPANY_TITLE,
 } from '@/database/constants'
 
+import { idoso, medico, mulher, medica } from '@/images'
+
+const BANNER = [
+  { name: 'Mulher', image: mulher },
+  { name: 'Médico', image: medico },
+  { name: 'Idoso', image: idoso },
+  { name: 'Médica', image: medica },
+]
+
 export default function HomePage() {
-  const [isBackgroundLoaded, setBackgroundLoaded] = useState(false)
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
+  const [isFading, setIsFading] = useState(false)
 
   useEffect(() => {
-    const bgImage = new Image()
-    bgImage.src =
-      'https://bkzzcslgcddqtunfwogg.supabase.co/storage/v1/object/public/images/background.webp'
-    bgImage.onload = () => {
-      setBackgroundLoaded(true)
-    }
+    const interval = setInterval(handleBannerTransition, 8000)
+    return () => clearInterval(interval)
   }, [])
 
-  return !isBackgroundLoaded ? (
-    <LoadingHomePage />
-  ) : (
-    // <div
-    //   className={`flex h-screen w-screen items-center bg-color-background bg-[url('https://bkzzcslgcddqtunfwogg.supabase.co/storage/v1/object/public/images/background.webp')] bg-cover bg-center bg-no-repeat`}
-    // >
-    <div
-      className={`relative flex w-screen items-center bg-color-background bg-cover bg-center bg-no-repeat`}
-    >
+  function handleBannerTransition() {
+    setIsFading(true)
+    setTimeout(() => {
+      setCurrentBannerIndex((prevIndex) => (prevIndex + 1) % BANNER.length)
+      setIsFading(false)
+    }, 500)
+  }
+
+  const currentBanner = BANNER[currentBannerIndex]
+
+  return (
+    <div className="relative flex w-screen items-center bg-color-background">
       <section className="container flex min-h-screen items-center md:px-[10%]">
         <div className="max-w-[600px]">
-          <h1 className="text-4xl font-bold leading-loose text-color-primary drop-shadow-md md:text-6xl">
-            {COMPANY_NAME}
-          </h1>
-          <h3 className="text-3xl font-bold text-color-secundary drop-shadow-md md:mt-1 md:text-4xl">
-            {COMPANY_TITLE}
-          </h3>
-          <p className="my-6 text-lg text-color-text">
-            {COMPANY_DESCRIPTION}
-            <br />
-            {COMPANY_DESCRIPTION_MORE}
-          </p>
-          <div className="flex h-14 max-w-[345px] justify-between">
-            <Link href="/cursos">
-              <Button
-                type="button"
-                className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secundary bg-color-secundary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secundary"
-              >
-                Saber Mais
-              </Button>
-            </Link>
-            <Link href="/contato">
-              <Button
-                type="button"
-                className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 border-color-secundary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secundary transition-colors duration-500 hover:bg-color-secundary hover:text-white group-hover:border-transparent group-hover:text-color-text"
-              >
-                Contato
-              </Button>
-            </Link>
-          </div>
+          <Header />
+          <Description />
+          <ActionButtons />
         </div>
+        <BannerImage isFading={isFading} currentBanner={currentBanner} />
       </section>
+    </div>
+  )
+}
+
+function Header() {
+  return (
+    <>
+      <h1 className="text-4xl font-bold leading-loose text-color-primary drop-shadow-md md:text-6xl">
+        {COMPANY_NAME}
+      </h1>
+      <h3 className="text-3xl font-bold text-color-secundary drop-shadow-md md:mt-1 md:text-4xl">
+        {COMPANY_TITLE}
+      </h3>
+    </>
+  )
+}
+
+function Description() {
+  return (
+    <p className="my-6 text-lg text-color-text">
+      {COMPANY_DESCRIPTION}
+      <br />
+      {COMPANY_DESCRIPTION_MORE}
+    </p>
+  )
+}
+
+function ActionButtons() {
+  return (
+    <div className="flex h-14 max-w-[345px] justify-between">
+      <Link href="/cursos">
+        <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secundary bg-color-secundary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secundary">
+          Saber Mais
+        </Button>
+      </Link>
+      <Link href="/contato">
+        <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 border-color-secundary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secundary transition-colors duration-500 hover:bg-color-secundary hover:text-white group-hover:border-transparent group-hover:text-color-text">
+          Contato
+        </Button>
+      </Link>
+    </div>
+  )
+}
+
+function BannerImage({
+  isFading,
+  currentBanner,
+}: {
+  isFading: boolean
+  currentBanner: { name: string; image: StaticImageData }
+}) {
+  return (
+    <div className="relative hidden sm:block">
+      <div
+        className={`transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      >
+        <Image src={currentBanner.image} alt={currentBanner.name} />
+      </div>
     </div>
   )
 }
