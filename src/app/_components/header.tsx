@@ -60,22 +60,27 @@ export default function Header(): JSX.Element {
                 </div>
                 <div className="hidden self-center sm:ml-6 sm:block">
                   <div className="flex space-x-4 text-center">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={Utils.classNames(
-                          item.href === location
-                            ? 'border-b-4 border-color-secondary font-bold'
-                            : 'font-medium',
-                          'm-auto flex min-w-24 justify-center gap-2 p-2 text-sm text-color-secondary transition duration-500 hover:border-b-4 hover:border-color-secondary',
+                    {navigation.map((item, index) => (
+                      <>
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className={Utils.classNames(
+                            item.href === location
+                              ? 'border-b-2 border-color-secondary font-bold'
+                              : 'font-medium',
+                            'm-auto flex min-w-24 justify-center gap-2 p-2 text-sm text-color-secondary transition duration-500 hover:border-b-2 hover:border-color-secondary',
+                          )}
+                          aria-current={
+                            item.href === location ? 'page' : undefined
+                          }
+                        >
+                          {item.name.toUpperCase()}
+                        </Link>
+                        {index !== navigation.length - 1 && (
+                          <div className="border-r-2 border-color-secondary" />
                         )}
-                        aria-current={
-                          item.href === location ? 'page' : undefined
-                        }
-                      >
-                        {item.name.toUpperCase()}
-                      </Link>
+                      </>
                     ))}
                   </div>
                 </div>
