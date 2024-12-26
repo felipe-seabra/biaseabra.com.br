@@ -11,12 +11,13 @@ import { logo } from '@/images'
 
 import Utils from '@/lib/utils'
 import { COMPANY_NAME } from '@/database/constants'
+import React from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Planos', href: '#' },
+  { name: 'Planos', href: '#plans' },
   { name: 'Agendar Atendimento', href: '#' },
-  { name: 'FAQ', href: '#' },
+  { name: 'FAQ', href: '#faq' },
 ]
 
 export default function Header(): JSX.Element {
@@ -61,7 +62,7 @@ export default function Header(): JSX.Element {
                 <div className="hidden self-center sm:ml-6 sm:block">
                   <div className="flex space-x-4 text-center">
                     {navigation.map((item, index) => (
-                      <div key={item.name}>
+                      <React.Fragment key={item.name}>
                         <Link
                           href={item.href}
                           className={Utils.classNames(
@@ -79,7 +80,7 @@ export default function Header(): JSX.Element {
                         {index !== navigation.length - 1 && (
                           <div className="border-r-2 border-color-secondary" />
                         )}
-                      </div>
+                      </React.Fragment>
                     ))}
                   </div>
                 </div>
