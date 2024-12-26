@@ -61,9 +61,8 @@ export default function Header(): JSX.Element {
                 <div className="hidden self-center sm:ml-6 sm:block">
                   <div className="flex space-x-4 text-center">
                     {navigation.map((item, index) => (
-                      <>
+                      <div key={item.name}>
                         <Link
-                          key={item.name}
                           href={item.href}
                           className={Utils.classNames(
                             item.href === location
@@ -80,7 +79,7 @@ export default function Header(): JSX.Element {
                         {index !== navigation.length - 1 && (
                           <div className="border-r-2 border-color-secondary" />
                         )}
-                      </>
+                      </div>
                     ))}
                   </div>
                 </div>

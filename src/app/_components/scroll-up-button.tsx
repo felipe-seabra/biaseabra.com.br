@@ -31,7 +31,7 @@ export function ScrollUpButton() {
     <div className="animate-pulse">
       <button
         type="button"
-        className={`fixed bottom-80 right-4 flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border-2 border-color-secondary text-color-secondary shadow-md transition ${isVisible ? '' : 'hidden'}`}
+        className={`fixed bottom-80 right-4 flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border-2 border-color-gray text-color-primary shadow-md transition ${isVisible ? '' : 'hidden'}`}
         onClick={scrollToTop}
         title="Voltar ao topo"
       >
