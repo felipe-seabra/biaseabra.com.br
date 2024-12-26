@@ -8,4 +8,4 @@ export const SITE_URL = 'https://biaseabra.com.br/'
 export const SITE_NAME = 'https://www.biaseabra.com.br'
 
 export const linkWhatsapp =
-  'https://api.whatsapp.com/send?phone=5518981029767&text=Ol%C3%A1,%20tenho%20interesse%20no%20curso%20profissionalizante%20do%20Criarte.'
+  'https://api.whatsapp.com/send?phone=5518997968347&text=Ol%C3%A1,%20tenho%20interesse.'
