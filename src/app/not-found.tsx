@@ -17,7 +17,7 @@ export default function Error404() {
           <Link href="/" className="relative z-20 flex justify-center">
             <Button
               type="button"
-              className="bg-criarte-secundary-700 hover:bg-criarte-secundary"
+              className="bg-color-secundary-700 hover:bg-color-secundary"
             >
               VOLTAR
             </Button>
