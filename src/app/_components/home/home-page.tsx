@@ -36,7 +36,7 @@ export default function HomePage() {
     setTimeout(() => {
       setCurrentBannerIndex((prevIndex) => (prevIndex + 1) % BANNER.length)
       setIsFading(false)
-    }, 500)
+    }, 300)
   }
 
   const currentBanner = BANNER[currentBannerIndex]
