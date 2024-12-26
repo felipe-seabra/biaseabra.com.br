@@ -11,8 +11,7 @@ export async function SetCookie({
 }) {
   const expirationDate = new Date()
   expirationDate.setTime(expirationDate.getTime() + 30 * 24 * 60 * 60 * 1000) // 30 dias em milissegundos
-
-  cookies().set(name, value, {
+  ;(await cookies()).set(name, value, {
     expires: expirationDate,
     secure: true,
     httpOnly: true,
@@ -21,9 +20,9 @@ export async function SetCookie({
 }
 
 export async function GetCookie(name: string) {
-  return cookies().get(name)
+  return (await cookies()).get(name)
 }
 
 export async function DeleteCookie(name: string) {
-  cookies().delete(name)
+  ;(await cookies()).delete(name)
 }
