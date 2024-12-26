@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button'
 import {
   COMPANY_DESCRIPTION,
   COMPANY_DESCRIPTION_MORE,
-  COMPANY_NAME,
   COMPANY_TITLE,
 } from '@/database/constants'
 
@@ -59,10 +58,10 @@ function Header() {
   return (
     <>
       <h1 className="text-4xl font-bold leading-loose text-color-primary drop-shadow-md md:text-6xl">
-        {COMPANY_NAME}
+        {COMPANY_TITLE}
       </h1>
       <h3 className="text-3xl font-bold text-color-secundary drop-shadow-md md:mt-1 md:text-4xl">
-        {COMPANY_TITLE}
+        {COMPANY_DESCRIPTION}
       </h3>
     </>
   )
@@ -70,11 +69,7 @@ function Header() {
 
 function Description() {
   return (
-    <p className="my-6 text-lg text-color-text">
-      {COMPANY_DESCRIPTION}
-      <br />
-      {COMPANY_DESCRIPTION_MORE}
-    </p>
+    <p className="my-6 text-lg text-color-text">{COMPANY_DESCRIPTION_MORE}</p>
   )
 }
 
