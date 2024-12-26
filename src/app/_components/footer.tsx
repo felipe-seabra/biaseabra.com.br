@@ -24,11 +24,11 @@ export default function Footer() {
     <></>
   ) : (
     <footer className="absolute bottom-0 z-50 w-full pb-2">
-      <span className="text-color-secondary block text-center text-sm">
+      <span className="block text-center text-sm text-color-secondary">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
-          {footer.COMPANY_NAME}{' '}
-        </Link>
+          {footer.COMPANY_NAME}
+        </Link>{' '}
         - {footer.description}
       </span>
       <ChatPopUp />
