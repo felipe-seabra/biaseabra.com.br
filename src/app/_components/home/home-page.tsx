@@ -76,12 +76,12 @@ function Description() {
 function ActionButtons() {
   return (
     <div className="flex h-14 max-w-[345px] justify-between">
-      <Link href="/cursos">
+      <Link href="/">
         <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secundary bg-color-secundary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secundary">
-          Saber Mais
+          Ver Planos
         </Button>
       </Link>
-      <Link href="/contato">
+      <Link href="/">
         <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 border-color-secundary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secundary transition-colors duration-500 hover:bg-color-secundary hover:text-white group-hover:border-transparent group-hover:text-color-text">
           Contato
         </Button>
