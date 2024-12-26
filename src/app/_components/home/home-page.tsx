@@ -41,8 +41,8 @@ export default function HomePage() {
   const currentBanner = BANNER[currentBannerIndex]
 
   return (
-    <div className="relative flex w-screen items-center bg-color-background">
-      <section className="container flex min-h-screen items-center md:px-[10%]">
+    <div className="relative flex w-full items-center bg-color-background shadow-sm">
+      <section className="container flex items-center pt-24 md:px-[10%]">
         <div className="max-w-[600px]">
           <Header />
           <Description />

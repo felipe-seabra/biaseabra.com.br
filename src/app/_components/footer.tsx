@@ -22,8 +22,19 @@ export default function Footer() {
 
   return location.startsWith('/dashboard') ? (
     <></>
-  ) : (
+  ) : location.startsWith('/login') ? (
     <footer className="absolute bottom-0 z-50 w-full pb-2">
+      <span className="block text-center text-sm text-color-secondary">
+        © {footer.date}{' '}
+        <Link href="/" className="hover:underline">
+          {footer.COMPANY_NAME}
+        </Link>{' '}
+        - {footer.description}
+      </span>
+      <ChatPopUp />
+    </footer>
+  ) : (
+    <footer className="relative z-50 w-full py-2">
       <span className="block text-center text-sm text-color-secondary">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
