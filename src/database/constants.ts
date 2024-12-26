@@ -1,5 +1,5 @@
 export const COMPANY_NAME = 'Bia Seabra'
-export const COMPANY_TITLE = 'Nextgo Saúde'
+export const COMPANY_TITLE = 'Next Go Saúde'
 export const COMPANY_DESCRIPTION = 'Sua Saúde, Onde e Quando Você Precisar.'
 export const COMPANY_DESCRIPTION_MORE =
   'Atendimento médico de qualidade na palma da sua mão. Acesse consultas, exames e acompanhamento de saúde sem sair de casa.'
