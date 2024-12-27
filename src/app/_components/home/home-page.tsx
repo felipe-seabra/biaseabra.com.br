@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image'
 
+import CountUp from 'react-countup'
+
 import { Button } from '@/components/ui/button'
 
 import {
@@ -23,6 +25,7 @@ import {
   perfil3,
   perfil4,
 } from '@/images'
+import { cn } from '@/lib/utils'
 
 const BANNER = [
   { name: 'Mulher', image: mulher },
@@ -53,9 +56,9 @@ export default function HomePage() {
   const currentBanner = BANNER[currentBannerIndex]
 
   return (
-    <div className="relative flex w-full items-center bg-color-background pb-10 shadow-sm sm:pb-0">
-      <section className="container flex flex-wrap items-center pt-24 sm:flex-nowrap md:px-[10%]">
-        <div className="max-w-[600px]">
+    <div className="relative flex w-full items-center bg-color-background shadow-sm sm:py-32 sm:pb-0">
+      <section className="container flex flex-wrap items-center pt-24 sm:flex-nowrap md:px-[5%]">
+        <div className="max-w-[1200px]">
           <Header />
           <Description />
           <ActionButtons />
@@ -73,7 +76,39 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <BannerImage isFading={isFading} currentBanner={currentBanner} />
+        <div className="flex w-full flex-col-reverse items-center justify-center pt-3 text-color-gray sm:mt-7 sm:flex-row sm:gap-4">
+          <BannerImage
+            isFading={isFading}
+            currentBanner={currentBanner}
+            className="sm:order-1"
+          />
+          <div className="flex flex-col items-center justify-center gap-2 sm:order-2">
+            <div className="flex flex-col items-center justify-center rounded-lg bg-white px-10 py-5">
+              <h2 className="text-3xl font-semibold">
+                <CountUp start={0} end={30} duration={2} />+
+              </h2>
+              <p className="text-center text-sm font-light">
+                Especialidades clínicas
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center rounded-lg bg-white px-12 py-5">
+              <h2 className="text-3xl font-semibold">
+                <CountUp start={0} end={113} duration={2} />+
+              </h2>
+              <p className="text-center text-sm font-light">
+                Operadoras de saúde
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center rounded-lg bg-white px-12 py-5">
+              <h2 className="text-3xl font-semibold">
+                <CountUp start={0} end={300} duration={2} />+
+              </h2>
+              <p className="text-center text-sm font-light">
+                Clientes corporativos
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   )
@@ -118,14 +153,16 @@ function ActionButtons() {
 function BannerImage({
   isFading,
   currentBanner,
+  className,
 }: {
   isFading: boolean
   currentBanner: { name: string; image: StaticImageData }
+  className?: string
 }) {
   return (
-    <div className="relative">
+    <div className={cn('relative', className)}>
       <div
-        className={`transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+        className={`flex transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}
       >
         <Image src={currentBanner.image} alt={currentBanner.name} />
       </div>
