@@ -1,2 +1,2 @@
 export const OG_IMAGE =
-  'https://bkzzcslgcddqtunfwogg.supabase.co/storage/v1/object/public/images/ogImage/ogImage.webp'
+  'https://yiyjjqqksnvnvpxvehiy.supabase.co/storage/v1/object/public/images/og-image/og-image.webp'
