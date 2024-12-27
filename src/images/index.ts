@@ -25,3 +25,6 @@ export { default as perfil4 } from './profiles/perfil4.png'
 // PLANS
 export { default as familiar } from './plans/familiar.webp'
 export { default as empresarial } from './plans/empresarial.webp'
+
+// ALL
+export { default as duvidas } from './all-images/duvidas.png'
