@@ -10,6 +10,7 @@ import {
   COMPANY_DESCRIPTION,
   COMPANY_DESCRIPTION_MORE,
   COMPANY_TITLE,
+  linkWhatsapp,
 } from '@/database/constants'
 
 import {
@@ -100,12 +101,12 @@ function Description() {
 function ActionButtons() {
   return (
     <div className="mb-10 flex h-14 w-full justify-between sm:max-w-[345px]">
-      <Link href="/">
+      <Link href="#plans">
         <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secondary bg-color-secondary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secondary">
           Ver Planos
         </Button>
       </Link>
-      <Link href="/">
+      <Link href={linkWhatsapp}>
         <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 border-color-secondary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secondary transition-colors duration-500 hover:bg-color-secondary hover:text-white group-hover:border-transparent group-hover:text-color-text">
           Contato
         </Button>
