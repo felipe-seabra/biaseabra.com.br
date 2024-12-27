@@ -10,7 +10,7 @@ import { empresarial, familiar } from '@/images'
 export default function PlansPage() {
   return (
     <div
-      className="relative z-50 flex min-h-96 w-full items-center bg-color-background py-16 shadow-sm shadow-color-secondary"
+      className="relative z-40 flex min-h-96 w-full items-center bg-color-background py-16 shadow-sm shadow-color-secondary"
       id="planos"
     >
       <section className="container flex flex-col items-center justify-center gap-8 xl:flex-row xl:items-start">
