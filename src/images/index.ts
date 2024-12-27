@@ -21,3 +21,7 @@ export { default as perfil1 } from './profiles/perfil1.png'
 export { default as perfil2 } from './profiles/perfil2.png'
 export { default as perfil3 } from './profiles/perfil3.png'
 export { default as perfil4 } from './profiles/perfil4.png'
+
+// PLANS
+export { default as familiar } from './plans/familiar.webp'
+export { default as empresarial } from './plans/empresarial.webp'
