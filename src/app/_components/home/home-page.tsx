@@ -63,7 +63,7 @@ export default function HomePage() {
           <Description />
           <ActionButtons />
           <div className="flex w-full justify-center">
-            <div className="relative flex h-24 w-80 items-center justify-center rounded-lg border-2 border-white bg-white bg-opacity-40 p-4 shadow-sm sm:bottom-0 sm:left-[50%] sm:z-50">
+            <div className="relative flex h-24 w-80 items-center justify-center rounded-lg border-2 border-white bg-white bg-opacity-40 p-4 shadow-sm sm:bottom-0 sm:left-[50%] sm:z-40">
               {PROFILES.map((profile, index) => (
                 <Image
                   key={index}
