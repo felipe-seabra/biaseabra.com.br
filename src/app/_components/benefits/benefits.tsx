@@ -23,10 +23,7 @@ const BENEFICITS = [
 ]
 export default function BenefitsPage() {
   return (
-    <div
-      className="relative mt-[-45px] flex min-h-80 w-full items-center bg-color-secondary sm:mt-0"
-      id="plans"
-    >
+    <div className="relative mt-[-45px] flex min-h-80 w-full items-center bg-color-secondary sm:mt-0">
       <section className="container flex items-center justify-center">
         <div className="flex flex-wrap justify-center gap-4 text-white">
           {BENEFICITS.map((benefit, index) => (

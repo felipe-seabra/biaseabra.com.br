@@ -15,7 +15,7 @@ import React from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Planos', href: '#plans' },
+  { name: 'Planos', href: '#planos' },
   { name: 'Agendar Atendimento', href: '#' },
   { name: 'FAQ', href: '#faq' },
 ]

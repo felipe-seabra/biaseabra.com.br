@@ -76,7 +76,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="flex w-full flex-col-reverse items-center justify-center pt-3 text-color-gray sm:mt-7 sm:flex-row sm:gap-4">
+        <div className="flex w-full flex-col-reverse items-center justify-center pt-3 text-color-gray sm:mt-7 sm:flex-row sm:gap-[-10]">
           <BannerImage
             isFading={isFading}
             currentBanner={currentBanner}
@@ -87,7 +87,7 @@ export default function HomePage() {
               <h2 className="text-3xl font-semibold">
                 <CountUp start={0} end={30} duration={2} />+
               </h2>
-              <p className="text-center text-sm font-light">
+              <p className="text-nowrap text-center text-sm font-light">
                 Especialidades clínicas
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function HomePage() {
               <h2 className="text-3xl font-semibold">
                 <CountUp start={0} end={113} duration={2} />+
               </h2>
-              <p className="text-center text-sm font-light">
+              <p className="text-nowrap text-center text-sm font-light">
                 Operadoras de saúde
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function HomePage() {
               <h2 className="text-3xl font-semibold">
                 <CountUp start={0} end={300} duration={2} />+
               </h2>
-              <p className="text-center text-sm font-light">
+              <p className="text-nowrap text-center text-sm font-light">
                 Clientes corporativos
               </p>
             </div>
@@ -136,7 +136,7 @@ function Description() {
 function ActionButtons() {
   return (
     <div className="mb-10 flex h-14 w-full justify-between sm:max-w-[345px]">
-      <Link href="#plans">
+      <Link href="#planos">
         <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secondary bg-color-secondary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secondary">
           Ver Planos
         </Button>
