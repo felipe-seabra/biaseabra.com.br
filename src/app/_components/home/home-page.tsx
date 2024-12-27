@@ -84,7 +84,7 @@ export default function HomePage() {
           />
           <div className="flex flex-col items-center justify-center gap-2 sm:order-2">
             <div className="flex flex-col items-center justify-center rounded-lg bg-white px-10 py-5">
-              <h2 className="text-3xl font-semibold">
+              <h2 className="text-3xl sm:text-5xl">
                 <CountUp start={0} end={30} duration={2} />+
               </h2>
               <p className="text-nowrap text-center text-sm font-light">
@@ -92,7 +92,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-lg bg-white px-12 py-5">
-              <h2 className="text-3xl font-semibold">
+              <h2 className="text-3xl sm:text-5xl">
                 <CountUp start={0} end={113} duration={2} />+
               </h2>
               <p className="text-nowrap text-center text-sm font-light">
@@ -100,7 +100,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-col items-center justify-center rounded-lg bg-white px-12 py-5">
-              <h2 className="text-3xl font-semibold">
+              <h2 className="text-3xl sm:text-5xl">
                 <CountUp start={0} end={300} duration={2} />+
               </h2>
               <p className="text-nowrap text-center text-sm font-light">
