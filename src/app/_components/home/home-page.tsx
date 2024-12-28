@@ -13,7 +13,7 @@ import {
   COMPANY_DESCRIPTION_MORE,
   COMPANY_TITLE,
   linkWhatsapp,
-} from '@/database/constants'
+} from '@/constants/constants'
 
 import {
   idoso,

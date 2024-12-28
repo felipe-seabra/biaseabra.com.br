@@ -8,7 +8,7 @@ import Utils from '@/lib/utils'
 import { logoIcon } from '@/images'
 import { Input } from '../../components/ui/input'
 import { Button } from '../../components/ui/button'
-import { COMPANY_NAME } from '@/database/constants'
+import { COMPANY_NAME } from '@/constants/constants'
 
 export function ChatPopUp() {
   const location = usePathname()

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Skeleton } from '@/components/ui/skeleton'
 
 import { logoIcon } from '@/images'
-import { COMPANY_NAME } from '@/database/constants'
+import { COMPANY_NAME } from '@/constants/constants'
 
 export default function LoadingHomePage() {
   return (

@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import { ChatPopUp } from './chat-pop-up'
 
-import { COMPANY_NAME } from '@/database/constants'
+import { COMPANY_NAME } from '@/constants/constants'
 
 const currentDate = new Date()
 const currentYear = currentDate.getFullYear()

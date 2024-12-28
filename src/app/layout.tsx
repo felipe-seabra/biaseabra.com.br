@@ -2,7 +2,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { OG_IMAGE } from '@/database/links'
+import { OG_IMAGE } from '@/data/links'
 import { Toaster } from '@/components/ui/toaster'
 import { ScrollUpButton } from '@/app/_components/scroll-up-button'
 import { CookieConsentComponent } from '@/app/_components/cookie-consent'
@@ -19,7 +19,7 @@ import {
   SITE_NAME,
   COMPANY_TITLE,
   COMPANY_DESCRIPTION,
-} from '@/database/constants'
+} from '@/constants/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 

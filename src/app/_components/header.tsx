@@ -10,7 +10,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { logo } from '@/images'
 
 import Utils from '@/lib/utils'
-import { COMPANY_NAME } from '@/database/constants'
+import { COMPANY_NAME } from '@/constants/constants'
 import React from 'react'
 
 const navigation = [
