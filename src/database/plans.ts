@@ -15,7 +15,7 @@ export const plans = [
     buttonName: 'Fazer Cotação',
     // price: 99.99,
     image:
-      'https://yiyjjqqksnvnvpxvehiy.supabase.co/storage/v1/object/public/images/og-image/og-image.webp',
+      'https://yiyjjqqksnvnvpxvehiy.supabase.co/storage/v1/object/public/images/plans/empresarial.webp',
     active: true,
     slug: 'empresarial',
   },

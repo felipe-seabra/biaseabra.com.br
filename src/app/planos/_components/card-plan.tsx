@@ -21,16 +21,16 @@ export function CardPlan(plan: IPlan) {
   }
 
   return (
-    <div className="pointer mx-4 flex min-h-[35rem] max-w-[50rem] items-center justify-center rounded-3xl border-2 border-gray-200 p-4 shadow-lg transition hover:border-color-secondary md:w-[50rem]">
-      <div className="mt-5">
-        <h2 className="mb-6 text-center text-4xl text-color-title">{name}</h2>
+    <div className="mx-4 flex min-h-[35rem] max-w-[50rem] items-center justify-center rounded-3xl border-2 border-gray-200 p-4 shadow-lg transition hover:border-color-secondary md:w-[50rem]">
+      <div className="mt-4">
+        <h2 className="mb-4 text-center text-4xl text-color-title">{name}</h2>
         <p className="text-center text-lg font-light text-color-text">
           {description}
         </p>
         <div className="relative mt-5 flex justify-center">
           <img
             style={{ display: loadedImage ? 'inline-block' : 'none' }}
-            className="img-fluid shadow-custom mb-5 max-w-52 rounded-xl"
+            className="img-fluid shadow-custom mb-5 max-w-80 rounded-xl"
             src={image}
             alt={name}
             onLoad={handleImageLoad}
@@ -38,8 +38,8 @@ export function CardPlan(plan: IPlan) {
           {!loadedImage && (
             <BlurhashCanvas
               hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
-              className="img-fluid shadow-custom mb-5 max-w-52 rounded-xl"
-              width={200}
+              className="img-fluid shadow-custom mb-5 max-w-80 rounded-xl"
+              width={300}
               height={200}
               punch={1}
             />
@@ -49,9 +49,9 @@ export function CardPlan(plan: IPlan) {
           {benefits?.map((e, index) => (
             <p
               key={index}
-              className="font-poppins mb-4 flex items-center text-center font-light text-color-text md:text-justify md:text-lg"
+              className="font-poppins mb-2 flex items-center text-center font-light text-color-text md:text-justify md:text-lg"
             >
-              <CheckIcon className="h-10 w-10" />
+              <CheckIcon className="h-8 w-8" />
               {e}
             </p>
           ))}
