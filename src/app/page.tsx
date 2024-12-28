@@ -1,10 +1,10 @@
 import { Suspense } from 'react'
 
 import LoadingHomePage from './loading'
-import HomePage from './_components/home/home-page'
-import BenefitsPage from './_components/benefits/benefits-page'
-import PlansPage from './_components/plans/plans-page'
-import FaqPage from './_components/faq/faq-page'
+import HomePage from './_components/home/home-componet'
+import BenefitsPage from './_components/benefits/benefits-componet'
+import PlansPage from './_components/plans/plans-componet'
+import FaqPage from './_components/faq/faq-componet'
 
 export default function Home() {
   return (
