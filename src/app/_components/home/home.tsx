@@ -136,7 +136,7 @@ function Description() {
 function ActionButtons() {
   return (
     <div className="mb-10 flex h-14 w-full justify-between sm:max-w-[345px]">
-      <Link href="#planos">
+      <Link href="/planos">
         <Button className="relative inline-flex h-full w-40 items-center justify-center overflow-hidden rounded-lg border-2 border-color-secondary bg-color-secondary text-xl font-semibold leading-6 tracking-wide text-white transition-colors duration-500 hover:text-color-secondary">
           Ver Planos
         </Button>
