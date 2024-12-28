@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-export function ScrollUpButton() {
+export function ScrollUpButtonComponent() {
   const [isVisible, setIsVisible] = useState<boolean>(false)
 
   const toggleVisibility = () => {

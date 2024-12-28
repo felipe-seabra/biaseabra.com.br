@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/next-script-for-ga */
-export default function Analytics() {
+export default function AnalyticsComponent() {
   return (
     <>
       <script

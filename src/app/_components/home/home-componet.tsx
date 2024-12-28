@@ -36,7 +36,7 @@ const BANNER = [
 
 const PROFILES = [perfil1, perfil2, perfil3, perfil4]
 
-export default function HomePage() {
+export default function HomeComponent() {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
   const [isFading, setIsFading] = useState(false)
 

@@ -20,7 +20,7 @@ const navigation = [
   { name: 'FAQ', href: '#faq' },
 ]
 
-export default function Header(): JSX.Element {
+export default function HeaderComponent(): JSX.Element {
   const location = usePathname()
 
   return (

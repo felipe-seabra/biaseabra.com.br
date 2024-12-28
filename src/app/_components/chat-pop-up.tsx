@@ -10,7 +10,7 @@ import { Input } from '../../components/ui/input'
 import { Button } from '../../components/ui/button'
 import { COMPANY_NAME } from '@/constants/constants'
 
-export function ChatPopUp() {
+export function ChatPopUpComponent() {
   const location = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState('')

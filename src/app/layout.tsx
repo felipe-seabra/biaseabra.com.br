@@ -4,15 +4,15 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { OG_IMAGE } from '@/data/links'
 import { Toaster } from '@/components/ui/toaster'
-import { ScrollUpButton } from '@/app/_components/scroll-up-button'
+import { ScrollUpButtonComponent } from '@/app/_components/scroll-up-button'
 import { CookieConsentComponent } from '@/app/_components/cookie-consent'
 
 import Provider from '@/utils/providers'
 import { TooltipProvider } from '@/components/ui/tooltip'
 
-import Header from './_components/header'
-import Footer from './_components/footer'
-import Analytics from './_components/analytics'
+import HeaderComponent from './_components/header'
+import FooterComponent from './_components/footer'
+import AnalyticsComponent from './_components/analytics'
 
 import {
   COMPANY_NAME,
@@ -67,13 +67,13 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Provider>
-          <Header />
+          <HeaderComponent />
           <TooltipProvider>{children}</TooltipProvider>
-          <Footer />
-          <ScrollUpButton />
+          <FooterComponent />
+          <ScrollUpButtonComponent />
           <CookieConsentComponent />
           <Toaster />
-          <Analytics />
+          <AnalyticsComponent />
         </Provider>
       </body>
     </html>

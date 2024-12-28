@@ -21,7 +21,7 @@ const BENEFICITS = [
     image: clock,
   },
 ]
-export default function BenefitsPage() {
+export default function BenefitsComponent() {
   return (
     <div className="relative mt-[-45px] flex min-h-80 w-full items-center bg-color-secondary sm:mt-0">
       <section className="container flex items-center justify-center">

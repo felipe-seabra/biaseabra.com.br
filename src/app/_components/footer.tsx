@@ -4,7 +4,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
-import { ChatPopUp } from './chat-pop-up'
+import { ChatPopUpComponent } from './chat-pop-up'
 
 import { COMPANY_NAME } from '@/constants/constants'
 
@@ -17,7 +17,7 @@ const footer = {
   description: 'Todos os direitos reservados.',
 }
 
-export default function Footer() {
+export default function FooterComponent() {
   const location = usePathname()
 
   return location.startsWith('/dashboard') ? (
@@ -31,7 +31,7 @@ export default function Footer() {
         </Link>{' '}
         - {footer.description}
       </span>
-      <ChatPopUp />
+      <ChatPopUpComponent />
     </footer>
   ) : (
     <footer className="relative z-50 w-full py-2">
@@ -42,7 +42,7 @@ export default function Footer() {
         </Link>{' '}
         - {footer.description}
       </span>
-      <ChatPopUp />
+      <ChatPopUpComponent />
     </footer>
   )
 }

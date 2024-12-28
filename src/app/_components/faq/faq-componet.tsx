@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { duvidas } from '@/images'
 
-export default function FaqPage() {
+export default function FaqComponent() {
   return (
     <div
       className="relative flex min-h-96 w-full items-center bg-color-background py-16 shadow-sm shadow-color-secondary"

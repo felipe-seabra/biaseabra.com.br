@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 
 import { empresarial, familiar } from '@/images'
 
-export default function PlansPage() {
+export default function PlansComponent() {
   return (
     <div
       className="relative z-40 flex min-h-96 w-full items-center bg-color-background py-16 shadow-sm shadow-color-secondary"
