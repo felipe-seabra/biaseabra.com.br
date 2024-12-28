@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { OG_IMAGE } from '@/data/links'
+import { OG_IMAGE } from '@/database/links'
 
 import {
   COMPANY_NAME,

@@ -2,7 +2,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { OG_IMAGE } from '@/data/links'
+import { OG_IMAGE } from '@/database/links'
 import { Toaster } from '@/components/ui/toaster'
 import { ScrollUpButtonComponent } from '@/app/_components/scroll-up-button'
 import { CookieConsentComponent } from '@/app/_components/cookie-consent'

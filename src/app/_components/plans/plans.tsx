@@ -46,7 +46,7 @@ export default function PlansComponent() {
               </p>
             </div>
           </div>
-          <Link href="#planos">
+          <Link href="/planos">
             <Button className="relative mt-5 inline-flex h-full w-40 items-center justify-center overflow-hidden border-2 border-color-secondary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secondary transition-colors duration-500 hover:bg-color-secondary hover:text-white group-hover:border-transparent group-hover:text-color-text">
               Ver Planos
             </Button>
