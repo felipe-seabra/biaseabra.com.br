@@ -23,7 +23,7 @@ export default function FooterComponent() {
   return location.startsWith('/dashboard') ? (
     <></>
   ) : location.startsWith('/login') ? (
-    <footer className="absolute bottom-0 z-50 w-full bg-color-background pb-2">
+    <footer className="absolute bottom-0 z-50 w-full bg-gray-900 pb-2">
       <span className="block text-center text-sm text-color-secondary">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
