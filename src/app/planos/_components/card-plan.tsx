@@ -14,7 +14,7 @@ import { IPlan } from '@/interfaces'
 export function CardPlan(plan: IPlan) {
   const [loadedImage, setLoadedImage] = useState(false)
 
-  const { name, description, benefits, url, buttonName, image } = plan
+  const { name, description, benefits, url, buttonName, image, price } = plan
 
   const handleImageLoad = () => {
     setLoadedImage(true)
@@ -56,6 +56,20 @@ export function CardPlan(plan: IPlan) {
             </p>
           ))}
         </div>
+        {price && (
+          <div className="text-center text-color-secondary">
+            <div className="flex items-start justify-center">
+              <span className="mt-1 text-sm font-light leading-none">R$</span>
+              <span className="text-4xl font-semibold">
+                {price.toFixed(2).replace('.', ',').split(',')[0]}
+                <span className="text-lg font-light">
+                  ,{price.toFixed(2).split('.')[1]}
+                </span>
+              </span>
+            </div>
+          </div>
+        )}
+
         <Link href={url} target="_blank">
           <Button className="relative my-5 inline-flex h-full w-full items-center justify-center overflow-hidden border-2 border-color-secondary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secondary transition-colors duration-500 hover:bg-color-secondary hover:text-white group-hover:border-transparent group-hover:text-color-text">
             {buttonName}

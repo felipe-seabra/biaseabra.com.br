@@ -13,7 +13,7 @@ export const plans = [
     ],
     url: 'https://api.whatsapp.com/send?phone=5518997968347&text=Ol%C3%A1,%20tenho%20interesse%20no%20plano%20empresarial.',
     buttonName: 'Fazer Cotação',
-    price: 99.99,
+    // price: 99.99,
     image:
       'https://yiyjjqqksnvnvpxvehiy.supabase.co/storage/v1/object/public/images/og-image/og-image.webp',
     active: true,
