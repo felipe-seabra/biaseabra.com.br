@@ -21,8 +21,8 @@ export function CardPlan(plan: IPlan) {
   }
 
   return (
-    <div className="mx-4 flex min-h-[35rem] max-w-[50rem] items-center justify-center rounded-3xl border-2 border-gray-200 p-4 shadow-lg transition hover:border-color-secondary md:w-[50rem]">
-      <div className="mt-4">
+    <div className="mx-4 flex min-h-[50rem] max-w-[35rem] flex-col justify-between rounded-3xl border-2 border-gray-200 p-4 shadow-lg transition hover:border-color-secondary md:w-[50rem]">
+      <div>
         <h2 className="mb-4 text-center text-4xl text-color-title">{name}</h2>
         <p className="text-center text-lg font-light text-color-text">
           {description}
@@ -57,19 +57,21 @@ export function CardPlan(plan: IPlan) {
           ))}
         </div>
         {price && (
-          <div className="text-center text-color-secondary">
+          <div className="mt-10 text-center text-color-secondary">
             <div className="flex items-start justify-center">
-              <span className="mt-1 text-sm font-light leading-none">R$</span>
-              <span className="text-4xl font-semibold">
+              <span className="mt-1 text-lg font-light leading-none">R$</span>
+              <span className="text-5xl font-semibold">
                 {price.toFixed(2).replace('.', ',').split(',')[0]}
-                <span className="text-lg font-light">
+                <span className="text-xl font-light">
                   ,{price.toFixed(2).split('.')[1]}
                 </span>
               </span>
             </div>
           </div>
         )}
+      </div>
 
+      <div className="mt-auto">
         <Link href={url} target="_blank">
           <Button className="relative my-5 inline-flex h-full w-full items-center justify-center overflow-hidden border-2 border-color-secondary bg-transparent text-xl font-semibold leading-6 tracking-wide text-color-secondary transition-colors duration-500 hover:bg-color-secondary hover:text-white group-hover:border-transparent group-hover:text-color-text">
             {buttonName}

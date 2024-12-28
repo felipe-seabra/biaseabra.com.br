@@ -19,4 +19,24 @@ export const plans = [
     active: true,
     slug: 'empresarial',
   },
+  {
+    id: '02',
+    name: 'Plano Individual',
+    description: 'Todos os nossos benefícios para você',
+    benefits: [
+      'Mais de 30 Especialidades',
+      'Cancele quando quiser',
+      'Sem carência',
+      'Consultas médicas Ilimitadas 24hs/07d',
+      'Sem Limite de Uso',
+      'Cashback e Descontos em lojas e farmácias de todo Brasil',
+    ],
+    url: 'https://api.whatsapp.com/send?phone=5518997968347&text=Ol%C3%A1,%20tenho%20interesse%20no%20plano%20empresarial.',
+    buttonName: 'Contratar Agora',
+    price: 39.9,
+    image:
+      'https://yiyjjqqksnvnvpxvehiy.supabase.co/storage/v1/object/public/images/plans/empresarial.webp',
+    active: true,
+    slug: 'individual',
+  },
 ]
