@@ -23,7 +23,7 @@ export default function FooterComponent() {
   return location.startsWith('/dashboard') ? (
     <></>
   ) : location.startsWith('/login') ? (
-    <footer className="absolute bottom-0 z-50 w-full pb-2">
+    <footer className="absolute bottom-0 z-50 w-full bg-color-background pb-2">
       <span className="block text-center text-sm text-color-secondary">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
@@ -34,7 +34,7 @@ export default function FooterComponent() {
       <ChatPopUpComponent />
     </footer>
   ) : (
-    <footer className="relative z-50 w-full py-2">
+    <footer className="relative z-50 w-full bg-color-background py-2">
       <span className="block text-center text-sm text-color-secondary">
         © {footer.date}{' '}
         <Link href="/" className="hover:underline">
