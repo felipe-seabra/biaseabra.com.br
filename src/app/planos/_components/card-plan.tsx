@@ -64,6 +64,11 @@ export function CardPlan(plan: IPlan) {
                   ,{parseFloat(price).toFixed(2).split('.')[1]}
                 </span>
               </span>
+              {!plan.slug.includes('individual') && (
+                <span className="mt-1 text-sm font-light leading-none">
+                  *por vida
+                </span>
+              )}
             </div>
           </div>
         )}
