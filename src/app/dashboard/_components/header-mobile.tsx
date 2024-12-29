@@ -39,7 +39,7 @@ import { Button } from '@/components/ui/button'
 import { PanelLeft, Search } from 'lucide-react'
 
 import { COMPANY_NAME } from '@/constants/constants'
-import { avatar, logo } from '@/images'
+import { avatar, logoIcon } from '@/images'
 
 import { avatarImg } from '@/utils/gravatar'
 import { GetUserStorage } from '@/utils/get-user-storage'
@@ -91,7 +91,7 @@ export function DashboardHeaderMobile() {
             >
               <SheetClose>
                 <Image
-                  src={logo}
+                  src={logoIcon}
                   alt={COMPANY_NAME}
                   className="h-5 w-10 transition-all group-hover:scale-110"
                 />

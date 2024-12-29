@@ -16,7 +16,7 @@ import {
 import { Settings } from 'lucide-react'
 
 import { COMPANY_NAME } from '@/constants/constants'
-import { logo } from '@/images'
+import { logoIcon } from '@/images'
 
 import { usePathname } from 'next/navigation'
 import { NAV_LINKS } from './constants'
@@ -34,7 +34,7 @@ export function DashboardHeaderWeb() {
           className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
         >
           <Image
-            src={logo}
+            src={logoIcon}
             alt="Logo"
             className="h-4 w-4 transition-all group-hover:scale-110"
           />
