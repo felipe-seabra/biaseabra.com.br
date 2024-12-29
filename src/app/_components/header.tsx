@@ -16,7 +16,7 @@ import React, { useEffect } from 'react'
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Planos', href: '/planos' },
-  { name: 'Agendar Atendimento', href: '#' },
+  { name: 'Agendar Atendimento', href: 'https://app.nextgosaude.com.br' },
   { name: 'FAQ', href: '/#faq' },
 ]
 
