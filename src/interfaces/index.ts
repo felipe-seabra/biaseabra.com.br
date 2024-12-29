@@ -5,7 +5,7 @@ export interface IPlan {
   benefits: string[]
   url: string
   buttonName: string
-  price?: number
+  price?: string
   image: string
   active: boolean
   slug: string

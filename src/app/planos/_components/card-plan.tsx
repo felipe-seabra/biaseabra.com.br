@@ -59,9 +59,9 @@ export function CardPlan(plan: IPlan) {
             <div className="flex items-start justify-center">
               <span className="mt-1 text-lg font-light leading-none">R$</span>
               <span className="text-5xl font-semibold">
-                {price.toFixed(2).replace('.', ',').split(',')[0]}
+                {parseFloat(price).toFixed(2).replace('.', ',').split(',')[0]}
                 <span className="text-xl font-light">
-                  ,{price.toFixed(2).split('.')[1]}
+                  ,{parseFloat(price).toFixed(2).split('.')[1]}
                 </span>
               </span>
             </div>

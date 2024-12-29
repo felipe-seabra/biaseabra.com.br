@@ -55,7 +55,6 @@ const FormSchema = z.object({
   buttonName: z.string().min(3),
   price: z.string().optional(),
   image: z.string().url(),
-  slug: z.string().optional(),
   active: z.boolean(),
 })
 
@@ -86,14 +85,13 @@ export function FormPlan({ plan, token }: FormPlanProps) {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: plan?.name ?? '',
-      benefits: textWithBreaksBenefits ?? '',
       description: plan?.description ?? '',
+      benefits: textWithBreaksBenefits ?? '',
       url: plan?.url ?? '',
       buttonName: plan?.buttonName ?? '',
-      price: plan?.price?.toString() ?? '',
+      price: plan?.price ?? '',
       image: plan?.image ?? '',
       active: plan?.active ?? false,
-      slug: plan?.slug ?? '',
     },
   })
 
@@ -157,7 +155,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
               }
             }
             await queryClient.invalidateQueries('plans')
-            await queryClient.invalidateQueries(`plan-${plan.id}`)
+            await queryClient.invalidateQueries(`plan-${plan.slug}`)
             router.push('/dashboard/planos')
             return toast({
               title: 'Plano Alterado com Sucesso',
@@ -192,7 +190,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
         if (response) {
           if (response.ok) {
             await queryClient.invalidateQueries('plans')
-            router.push('/dashboard/plano')
+            router.push('/dashboard/planos')
             return toast({
               title: 'Plano Adicionado com Sucesso',
               description: 'O Plano foi adicionado no sistema com sucesso',
@@ -366,6 +364,23 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                   <div className="grid gap-6">
                     <FormField
                       control={form.control}
+                      name="buttonName"
+                      render={({ field }) => (
+                        <FormItem className="grid gap-3">
+                          <FormLabel>Nome do Botão</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="text"
+                              className="w-full"
+                              placeholder="Nome para ação do botão"
+                              {...field}
+                            />
+                          </FormControl>
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
                       name="url"
                       render={({ field }) => (
                         <FormItem className="grid gap-3">
@@ -375,28 +390,6 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                               type="text"
                               className="w-full"
                               placeholder="URL do plano"
-                              {...field}
-                            />
-                          </FormControl>
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="price"
-                      render={({ field }) => (
-                        <FormItem className="grid gap-3">
-                          <FormLabel className="flex flex-col">
-                            Valor do plano{' '}
-                            <span className="mt-1 text-xs font-extralight">
-                              (use ponto para separar as casas (Ex.: 99.99))
-                            </span>
-                          </FormLabel>
-                          <FormControl>
-                            <Input
-                              type="number"
-                              className="w-full"
-                              placeholder="Valor do Plano. EX: 99.99"
                               {...field}
                             />
                           </FormControl>
@@ -439,6 +432,35 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                           >
                             {field.value ? 'Ativo' : 'Desativado'}
                           </Badge>
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card x-chunk="dashboard-07-chunk-3">
+                <CardHeader>
+                  <CardTitle>Valor do Plano</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-6">
+                    <FormField
+                      control={form.control}
+                      name="price"
+                      render={({ field }) => (
+                        <FormItem className="grid gap-2">
+                          <FormLabel className=" text-xs font-extralight">
+                            Caso não tenha valor, pode ser deixado vazio
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              type="number"
+                              className="w-full"
+                              placeholder="Valor do Plano. EX: 99,99"
+                              {...field}
+                            />
+                          </FormControl>
                         </FormItem>
                       )}
                     />
@@ -492,7 +514,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                   </div>
                 </CardContent>
               </Card>
-              <Card>
+              {/* <Card>
                 <CardContent>
                   <div className="grid gap-6">
                     <FormField
@@ -512,7 +534,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                               type="text"
                               className="w-full text-xs"
                               {...field}
-                              placeholder="Slug do curso"
+                              placeholder="Slug do plano"
                               disabled
                               title="O slug é gerado automaticamente com o nome do curso após o envio e não pode ser alterado manualmente."
                             />
@@ -522,7 +544,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                     />
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </div>
           <div className="mt-5 flex items-center justify-center gap-2 md:hidden">
