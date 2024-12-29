@@ -49,7 +49,7 @@ export function DashboardHeaderWeb() {
                     href={link.href}
                     className={cn([
                       currentLocation === link.active &&
-                      'bg-accent text-accent-foreground',
+                        'bg-accent text-accent-foreground',
                       'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-accent-foreground md:h-8 md:w-8',
                     ])}
                   >
@@ -69,7 +69,7 @@ export function DashboardHeaderWeb() {
               href="/dashboard/configuracoes"
               className={cn([
                 currentLocation === 'configuracoes' &&
-                'bg-accent text-accent-foreground',
+                  'bg-accent text-accent-foreground',
                 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-accent-foreground md:h-8 md:w-8',
               ])}
               title="Configurações"

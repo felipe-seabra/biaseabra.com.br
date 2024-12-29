@@ -144,7 +144,7 @@ export function ConfigurationsPage({ token }: ConfigurationsPageProps) {
                     <CardContent>
                       Data de Criação:{' '}
                       {isFetching ? (
-                        <Loader2 className=" animate-spin" />
+                        <Loader2 className="animate-spin" />
                       ) : (
                         userAPI?.createdAt &&
                         new Intl.DateTimeFormat('pt-BR').format(
@@ -155,7 +155,7 @@ export function ConfigurationsPage({ token }: ConfigurationsPageProps) {
                     <CardFooter className="border-t p-6">
                       Última Atualização:{' '}
                       {isFetching ? (
-                        <Loader2 className=" animate-spin" />
+                        <Loader2 className="animate-spin" />
                       ) : (
                         userAPI?.updatedAt &&
                         new Intl.DateTimeFormat('pt-BR').format(
