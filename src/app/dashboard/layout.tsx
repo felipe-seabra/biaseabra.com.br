@@ -4,6 +4,8 @@ import { OG_IMAGE } from '@/database/links'
 
 import { DashboardHeaderWeb } from './_components/header-web'
 import { DashboardHeaderMobile } from './_components/header-mobile'
+import { ThemeProvider } from './_components/theme-provider'
+
 import {
   COMPANY_DESCRIPTION,
   COMPANY_NAME,
@@ -42,7 +44,14 @@ export default function RootLayout({
       {/* Mobile */}
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <DashboardHeaderMobile />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </div>
     </div>
   )

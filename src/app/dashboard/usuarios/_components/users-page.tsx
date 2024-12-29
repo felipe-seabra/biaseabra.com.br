@@ -36,7 +36,7 @@ import { TableUsers } from './table-users'
 
 import { GetUserStorage } from '@/utils/get-user-storage'
 import { useRouter } from 'next/navigation'
-import { useToast } from '@/hooks/use-toast'
+import { useToast } from '@/components/ui/use-toast'
 import { CardFooterCounter } from '../../_components/card-footer-counter'
 
 type UsersPageProps = {

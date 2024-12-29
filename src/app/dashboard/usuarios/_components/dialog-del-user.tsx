@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { useToast } from '@/hooks/use-toast'
+import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@radix-ui/react-toast'
 import { queryClient } from '@/utils/queryCLient'
 import { GetCookie } from '@/components/cookies-auth'

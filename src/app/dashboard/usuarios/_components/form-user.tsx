@@ -18,7 +18,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { useToast } from '@/hooks/use-toast'
+import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@/components/ui/toast'
 import {
   Form,
@@ -230,7 +230,7 @@ export function FormUser({ user, token }: FormUserProps) {
             <Badge
               variant={
                 form.watch('role') === Role.ADMIN ||
-                form.watch('role') === Role.MASTER
+                  form.watch('role') === Role.MASTER
                   ? 'outline'
                   : 'destructive'
               }

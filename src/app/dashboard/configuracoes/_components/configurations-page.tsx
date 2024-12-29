@@ -20,6 +20,7 @@ import { UpdatePassword } from './update-password'
 import { UpdateProfile } from './update-profile'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import { avatarImg } from '@/utils/gravatar'
+import { UpdateTheme } from './update-theme'
 
 type ConfigurationsPageProps = {
   token: string
@@ -30,6 +31,7 @@ export function ConfigurationsPage({ token }: ConfigurationsPageProps) {
   const [userAPI, setUserAPI] = useState<IUser>()
   const [isUpdatingPassword, setIsUpdatingPassword] = useState(false)
   const [isUpdatingProfile, setIsUpdatingProfile] = useState(false)
+  const [isUpdatingTheme, setIsUpdatingTheme] = useState(false)
 
   const [isFetching, setIsFetching] = useState(false)
 
@@ -62,16 +64,25 @@ export function ConfigurationsPage({ token }: ConfigurationsPageProps) {
   const handlePasswordButtonClick = () => {
     setIsUpdatingPassword(true)
     setIsUpdatingProfile(false)
+    setIsUpdatingTheme(false)
   }
 
   const handleProfileButtonClick = () => {
     setIsUpdatingPassword(false)
+    setIsUpdatingTheme(false)
     setIsUpdatingProfile(true)
+  }
+
+  const handleThemeButtonClick = () => {
+    setIsUpdatingPassword(false)
+    setIsUpdatingProfile(false)
+    setIsUpdatingTheme(true)
   }
 
   const handleViewProfileButtonClick = () => {
     setIsUpdatingPassword(false)
     setIsUpdatingProfile(false)
+    setIsUpdatingTheme(false)
   }
 
   return (
@@ -97,6 +108,12 @@ export function ConfigurationsPage({ token }: ConfigurationsPageProps) {
                   Alterar Senha
                 </button>
                 <button
+                  className="text-left text-gray-500 hover:underline dark:text-gray-400"
+                  onClick={handleThemeButtonClick}
+                >
+                  Alteração de Tema
+                </button>
+                <button
                   className="text-left text-gray-500 dark:text-gray-400"
                   onClick={handleProfileButtonClick}
                 >
@@ -104,73 +121,77 @@ export function ConfigurationsPage({ token }: ConfigurationsPageProps) {
                 </button>
               </nav>
               <div className="grid gap-6">
-                {!isUpdatingPassword && !isUpdatingProfile && currentUser && (
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="flex flex-wrap justify-between">
-                        <div>
-                          {currentUser.name}{' '}
-                          <Badge
-                            variant="outline"
-                            className={
-                              currentUser.role === Role.MASTER
-                                ? 'bg-purple-500 text-gray-100'
+                {!isUpdatingPassword &&
+                  !isUpdatingProfile &&
+                  !isUpdatingTheme &&
+                  currentUser && (
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex flex-wrap justify-between">
+                          <div>
+                            {currentUser.name}{' '}
+                            <Badge
+                              variant="outline"
+                              className={
+                                currentUser.role === Role.MASTER
+                                  ? 'bg-purple-500 text-gray-100'
+                                  : currentUser.role === Role.ADMIN
+                                    ? 'bg-red-500 text-gray-100'
+                                    : 'bg-green-500 text-gray-100'
+                              }
+                            >
+                              {currentUser.role === Role.MASTER
+                                ? 'Superuser'
                                 : currentUser.role === Role.ADMIN
-                                  ? 'bg-red-500 text-gray-100'
-                                  : 'bg-green-500 text-gray-100'
-                            }
-                          >
-                            {currentUser.role === Role.MASTER
-                              ? 'Superuser'
-                              : currentUser.role === Role.ADMIN
-                                ? 'Admin'
-                                : 'Member'}
-                          </Badge>
-                          <CardDescription className="font-normal">
-                            {currentUser.email}
-                          </CardDescription>
-                        </div>
-                        <div>
-                          <Avatar className="h-20 w-20">
-                            <AvatarImage
-                              src={avatarImg(currentUser.email)}
-                              alt={currentUser.name}
-                              className="overflow-hidden rounded-full"
-                            />
-                          </Avatar>
-                        </div>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      Data de Criação:{' '}
-                      {isFetching ? (
-                        <Loader2 className="animate-spin" />
-                      ) : (
-                        userAPI?.createdAt &&
-                        new Intl.DateTimeFormat('pt-BR').format(
-                          new Date(userAPI.createdAt),
-                        )
-                      )}
-                    </CardContent>
-                    <CardFooter className="border-t p-6">
-                      Última Atualização:{' '}
-                      {isFetching ? (
-                        <Loader2 className="animate-spin" />
-                      ) : (
-                        userAPI?.updatedAt &&
-                        new Intl.DateTimeFormat('pt-BR').format(
-                          new Date(userAPI.updatedAt),
-                        )
-                      )}
-                    </CardFooter>
-                  </Card>
-                )}
+                                  ? 'Admin'
+                                  : 'Member'}
+                            </Badge>
+                            <CardDescription className="font-normal">
+                              {currentUser.email}
+                            </CardDescription>
+                          </div>
+                          <div>
+                            <Avatar className="h-20 w-20">
+                              <AvatarImage
+                                src={avatarImg(currentUser.email)}
+                                alt={currentUser.name}
+                                className="overflow-hidden rounded-full"
+                              />
+                            </Avatar>
+                          </div>
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        Data de Criação:{' '}
+                        {isFetching ? (
+                          <Loader2 className="animate-spin" />
+                        ) : (
+                          userAPI?.createdAt &&
+                          new Intl.DateTimeFormat('pt-BR').format(
+                            new Date(userAPI.createdAt),
+                          )
+                        )}
+                      </CardContent>
+                      <CardFooter className="border-t p-6">
+                        Última Atualização:{' '}
+                        {isFetching ? (
+                          <Loader2 className="animate-spin" />
+                        ) : (
+                          userAPI?.updatedAt &&
+                          new Intl.DateTimeFormat('pt-BR').format(
+                            new Date(userAPI.updatedAt),
+                          )
+                        )}
+                      </CardFooter>
+                    </Card>
+                  )}
                 {isUpdatingPassword && (
                   <UpdatePassword user={currentUser} token={token} />
                 )}
                 {isUpdatingProfile && (
                   <UpdateProfile user={currentUser} token={token} />
                 )}
+                {isUpdatingTheme && <UpdateTheme />}
               </div>
             </div>
           </div>
