@@ -395,7 +395,7 @@ html {
 /* Finish Error Page */
 
 .shadow-custom {
-  box-shadow: 3px 3px #00ABF0, 0 0.2em;
+  box-shadow: 3px 3px #1391a0, 0 0.2em;
 }
  
 @layer base {

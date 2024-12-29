@@ -46,7 +46,7 @@ export function PlansPageComponent() {
       <h1 className="mb-6 text-center text-5xl font-semibold text-color-title">
         Escolha o Plano Ideal!
       </h1>
-      <div className="flex max-w-[1800px] flex-wrap items-center justify-center">
+      <div className="flex max-w-[1800px] flex-wrap items-center justify-center gap-2">
         {renderCards()}
       </div>
     </div>
