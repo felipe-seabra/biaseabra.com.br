@@ -230,7 +230,7 @@ export function FormUser({ user, token }: FormUserProps) {
             <Badge
               variant={
                 form.watch('role') === Role.ADMIN ||
-                  form.watch('role') === Role.MASTER
+                form.watch('role') === Role.MASTER
                   ? 'outline'
                   : 'destructive'
               }
