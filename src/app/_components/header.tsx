@@ -11,17 +11,26 @@ import { logo } from '@/images'
 
 import Utils from '@/lib/utils'
 import { COMPANY_NAME } from '@/constants/constants'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Planos', href: '/planos' },
   { name: 'Agendar Atendimento', href: '#' },
-  { name: 'FAQ', href: '#faq' },
+  { name: 'FAQ', href: '/#faq' },
 ]
 
 export default function HeaderComponent(): JSX.Element {
   const location = usePathname()
+
+  useEffect(() => {
+    if (location.includes('#faq')) {
+      const element = document.getElementById('faq')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [location])
 
   return (
     <Disclosure as="nav">
