@@ -396,7 +396,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                             <Input
                               type="number"
                               className="w-full"
-                              placeholder="Descrição do planos"
+                              placeholder="Valor do Plano. EX: 99.99"
                               {...field}
                             />
                           </FormControl>
