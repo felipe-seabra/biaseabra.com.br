@@ -326,7 +326,7 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                             <Input
                               type="text"
                               className="w-full"
-                              placeholder="Descrição do planos"
+                              placeholder="Descrição do plano"
                               {...field}
                             />
                           </FormControl>
@@ -500,7 +500,13 @@ export function FormPlan({ plan, token }: FormPlanProps) {
                       name="slug"
                       render={({ field }) => (
                         <FormItem className="mt-4 grid gap-3">
-                          <FormLabel>Slug do Plano</FormLabel>
+                          <FormLabel className="flex flex-col">
+                            Slug do Plano{' '}
+                            <span className="mt-1 text-xs font-extralight">
+                              (não se preocupe com isso, é gerado
+                              automaticamente)
+                            </span>
+                          </FormLabel>
                           <FormControl>
                             <Input
                               type="text"
