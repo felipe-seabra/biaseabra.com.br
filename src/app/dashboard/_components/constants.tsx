@@ -1,4 +1,4 @@
-import { Home, Users2, Settings, SeparatorVertical } from 'lucide-react'
+import { Home, Users2, Settings, Package } from 'lucide-react'
 
 export const NAV_LINKS = [
   {
@@ -9,7 +9,7 @@ export const NAV_LINKS = [
   },
   {
     href: '/dashboard/planos',
-    icon: <SeparatorVertical className="h-5 w-5" />,
+    icon: <Package className="h-5 w-5" />,
     text: 'Planos',
     active: 'planos',
   },
