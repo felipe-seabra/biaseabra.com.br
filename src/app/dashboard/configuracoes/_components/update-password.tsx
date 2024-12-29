@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import {
   Form,
   FormControl,

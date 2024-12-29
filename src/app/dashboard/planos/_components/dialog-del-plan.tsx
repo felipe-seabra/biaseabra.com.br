@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { supabase } from './supabase'
 
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import { ToastAction } from '@radix-ui/react-toast'
 import { queryClient } from '@/utils/queryCLient'
 import { GetCookie } from '@/components/cookies-auth'

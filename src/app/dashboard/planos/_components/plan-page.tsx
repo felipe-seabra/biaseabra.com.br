@@ -35,7 +35,7 @@ import { ListFilter, Loader2, PlusCircle } from 'lucide-react'
 import { TablePlans } from './table-plans'
 import { GetUserStorage } from '@/utils/get-user-storage'
 import { IPlan, IUser, Role } from '@/interfaces'
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import { useRouter } from 'next/navigation'
 import { CardFooterCounter } from '../../_components/card-footer-counter'
 

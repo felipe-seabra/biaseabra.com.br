@@ -4,7 +4,7 @@ import { Fragment } from 'react'
 
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/hooks/use-toast'
 
 import {
   DashboardSidebarMobile,

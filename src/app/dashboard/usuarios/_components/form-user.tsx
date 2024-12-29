@@ -18,7 +18,7 @@ import {
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import { ToastAction } from '@/components/ui/toast'
 import {
   Form,

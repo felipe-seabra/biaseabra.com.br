@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { FormPlan } from '../../_components/form-plan'
 
 import { Loader2 } from 'lucide-react'
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/hooks/use-toast'
 import { GetUserStorage } from '@/utils/get-user-storage'
 import { IPlan, IUser, Role } from '@/interfaces'
 
