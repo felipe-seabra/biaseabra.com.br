@@ -142,7 +142,12 @@ export function PlansPage() {
         <Card>
           <CardHeader>
             <CardTitle>Planos</CardTitle>
-            <CardDescription>Gerencie seus planos.</CardDescription>
+            <CardDescription className="flex flex-col">
+              Gerencie seus planos.{' '}
+              <span className=" mt-2 text-xs">
+                (O último editado ficará em primeiro.)
+              </span>
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
