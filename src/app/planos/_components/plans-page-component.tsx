@@ -38,7 +38,12 @@ export function PlansPageComponent() {
       )
     }
 
-    return plans.map((plan) => <CardPlan key={plan.id} {...plan} />)
+    return plans
+      .sort(
+        (a, b) =>
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+      ) // Converte para Date para comparar
+      .map((plan) => <CardPlan key={plan.id} {...plan} />)
   }
 
   return (

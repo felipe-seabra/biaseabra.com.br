@@ -29,65 +29,72 @@ type TablePlansProps = {
 
 export function TablePlans({ plans, currentUserIsAdmin }: TablePlansProps) {
   return plans.length ? (
-    plans.map((plan: IPlan) => (
-      <TableRow key={plan.id}>
-        <TableCell className="hidden sm:table-cell">
-          <img
-            alt={plan.name}
-            className="aspect-square rounded-md object-cover"
-            height="64"
-            src={plan.image}
-            width="64"
-          />
-        </TableCell>
-        <TableCell className="font-medium">{plan.name}</TableCell>
-        <TableCell>
-          <Badge
-            variant={plan.active ? 'outline' : 'destructive'}
-            className={plan.active ? 'bg-green-500 text-gray-100' : ''}
-          >
-            {plan.active ? 'Ativo' : 'Inativo'}
-          </Badge>
-        </TableCell>
-        <TableCell className="hidden md:table-cell">
-          {new Intl.DateTimeFormat('pt-BR').format(new Date(plan.createdAt))}
-        </TableCell>
-        <TableCell>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button aria-haspopup="true" size="icon" variant="ghost">
-                <MoreHorizontal className="h-4 w-4" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <Link
-                href={`/dashboard/planos/${plan.slug}`}
-                className={
-                  !currentUserIsAdmin ? 'pointer-events-none text-gray-400' : ''
-                }
-              >
-                <DropdownMenuItem
+    plans
+      .sort(
+        (a, b) =>
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+      ) // Ordena os planos pela data de modificação
+      .map((plan: IPlan) => (
+        <TableRow key={plan.id}>
+          <TableCell className="hidden sm:table-cell">
+            <img
+              alt={plan.name}
+              className="aspect-square rounded-md object-cover"
+              height="64"
+              src={plan.image}
+              width="64"
+            />
+          </TableCell>
+          <TableCell className="font-medium">{plan.name}</TableCell>
+          <TableCell>
+            <Badge
+              variant={plan.active ? 'outline' : 'destructive'}
+              className={plan.active ? 'bg-green-500 text-gray-100' : ''}
+            >
+              {plan.active ? 'Ativo' : 'Inativo'}
+            </Badge>
+          </TableCell>
+          <TableCell className="hidden md:table-cell">
+            {new Intl.DateTimeFormat('pt-BR').format(new Date(plan.createdAt))}
+          </TableCell>
+          <TableCell>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button aria-haspopup="true" size="icon" variant="ghost">
+                  <MoreHorizontal className="h-4 w-4" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <Link
+                  href={`/dashboard/planos/${plan.slug}`}
                   className={
                     !currentUserIsAdmin
-                      ? 'cursor-not-allowed'
-                      : 'cursor-pointer'
+                      ? 'pointer-events-none text-gray-400'
+                      : ''
                   }
                 >
-                  Editar
-                </DropdownMenuItem>
-              </Link>
-              <DialogDelPlan
-                {...props}
-                id={plan.id}
-                available={plan.active}
-                imageUrl={plan.image}
-              />
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </TableCell>
-      </TableRow>
-    ))
+                  <DropdownMenuItem
+                    className={
+                      !currentUserIsAdmin
+                        ? 'cursor-not-allowed'
+                        : 'cursor-pointer'
+                    }
+                  >
+                    Editar
+                  </DropdownMenuItem>
+                </Link>
+                <DialogDelPlan
+                  {...props}
+                  id={plan.id}
+                  available={plan.active}
+                  imageUrl={plan.image}
+                />
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </TableCell>
+        </TableRow>
+      ))
   ) : (
     <p>Nenhuma plano</p>
   )
