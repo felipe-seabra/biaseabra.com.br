@@ -13,10 +13,16 @@ import Utils from '@/lib/utils'
 import { COMPANY_NAME } from '@/constants/constants'
 import React, { useEffect } from 'react'
 
-const navigation = [
+type NavigationType = { name: string; href: string; target?: string }
+
+const navigation: NavigationType[] = [
   { name: 'Home', href: '/' },
   { name: 'Planos', href: '/planos' },
-  { name: 'Agendar Atendimento', href: 'https://app.nextgosaude.com.br' },
+  {
+    name: 'Agendar Atendimento',
+    href: 'https://app.nextgosaude.com.br',
+    target: '_blank',
+  },
   { name: 'FAQ', href: '/#faq' },
 ]
 
@@ -83,6 +89,7 @@ export default function HeaderComponent(): JSX.Element {
                           aria-current={
                             item.href === location ? 'page' : undefined
                           }
+                          {...(item.target && { target: item.target })}
                         >
                           {item.name.toUpperCase()}
                         </Link>
@@ -99,7 +106,11 @@ export default function HeaderComponent(): JSX.Element {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-                <Link href={item.href} key={item.name}>
+                <Link
+                  href={item.href}
+                  key={item.name}
+                  {...(item.target && { target: item.target })}
+                >
                   <Disclosure.Button
                     className={Utils.classNames(
                       item.href === location
