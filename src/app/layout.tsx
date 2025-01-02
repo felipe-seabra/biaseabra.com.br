@@ -50,11 +50,6 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <head>
-        <meta
-          name="google-site-verification"
-          content="XDxWFYV-iWQl33hU1O9v8XlrMGfzzk4vbxbLc5hsM3U"
-        />
-
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
